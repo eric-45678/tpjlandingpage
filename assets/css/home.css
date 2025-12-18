@@ -312,6 +312,7 @@
     
     .speed-value-inner{
         font-size: 23px;
+        right: 30px;
     }
 
     .hero-links-left .hero-link-item:nth-child(2) {
