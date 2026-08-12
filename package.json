@@ -1,0 +1,26 @@
+{
+  "name": "tpj-landing-page",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint ."
+  },
+  "dependencies": {
+    "@fontsource/bai-jamjuree": "^5.2.6",
+    "next": "^15.4.6",
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4.1.11",
+    "@types/node": "20.17.6",
+    "@types/react": "19.2.18",
+    "eslint": "^9.33.0",
+    "eslint-config-next": "^15.4.6",
+    "tailwindcss": "^4.1.11",
+    "typescript": "^5.9.2"
+  }
+}

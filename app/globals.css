@@ -1,0 +1,167 @@
+@import "tailwindcss";
+
+:root {
+  --green: #055319;
+  --cream: #f6f0e4;
+  --gold: #a96f0b;
+}
+
+* { box-sizing: border-box; }
+
+html, body { margin: 0; min-height: 100%; background: #f7ead2; }
+
+body { font-family: "Bai Jamjuree", sans-serif; }
+
+a { color: inherit; text-decoration: none; }
+
+.landing-page {
+  min-height: 100svh;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  background: #f7ead2;
+}
+
+.design-stage {
+  position: relative;
+  width: 100vw;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  isolation: isolate;
+  background: #fff;
+}
+
+.background-art, .background-art img { position: absolute; inset: 0; width: 100%; height: 100%; }
+.background-art img { object-fit: cover; }
+
+.warm-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background: linear-gradient(180deg, rgba(255,213,178,.5) 0%, rgba(255,213,178,0) 44%);
+  mix-blend-mode: screen;
+}
+
+.brand-lockup { position: absolute; z-index: 3; left: 31.5%; top: 2.4%; width: 45.85%; height: 35%; }
+.tpj-logo { position: absolute; left: 38.65%; top: 0; width: 22.73%; height: 30%; overflow: hidden; }
+.tpj-logo img { object-fit: fill; width: 128.83% !important; height: 109.78% !important; left: -14.41% !important; top: -4.84% !important; }
+.headline { position: absolute; inset: 29.8% 0 0; overflow: hidden; }
+.headline img { object-fit: fill; width: 116.72% !important; height: 253.91% !important; left: -7.04% !important; top: -52.78% !important; }
+
+.speed-title { position: absolute; z-index: 5; left: 31.5%; top: 40%; width: 20.16%; height: 8.04%; }
+.speed-title-art { position: absolute; inset: 0; overflow: hidden; }
+.speed-title-art img { object-fit: fill; width: 114.7% !important; height: 272.62% !important; left: -7.35% !important; top: -86.31% !important; right: auto !important; bottom: auto !important; max-width: none; }
+.speed-title span { position: absolute; left: 60.46%; top: 27.94%; transform: translateX(-50%); color: white; text-transform: uppercase; font-size: clamp(13px, 1.561vw, 29.971px); font-weight: 700; line-height: normal; white-space: nowrap; }
+
+.speed-panel {
+  position: absolute;
+  z-index: 4;
+  left: 11.61%;
+  top: 50%;
+  width: 59.9%;
+  padding: .52vw;
+  border: 1px solid white;
+  border-radius: 1.04vw;
+  background: rgba(255,255,255,.3);
+}
+
+.speed-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 1.145vw; }
+
+.speed-card {
+  position: relative;
+  min-width: 0;
+  padding: .52vw 1.72vw;
+  border: 1px solid var(--gold);
+  border-radius: 1.56vw;
+  background: var(--cream);
+  box-shadow: inset 0 4px 4px rgba(255,255,255,.97), 0 2px 1px rgba(0,0,0,.2);
+  color: var(--green);
+}
+
+.gauge { position: relative; width: 100%; aspect-ratio: 238/142; overflow: hidden; }
+.gauge picture, .gauge img { position: absolute; }
+.gauge picture { inset: 0; display: block; }
+.gauge img { width: 165.13% !important; height: 184.51% !important; left: -27.94% !important; top: -40.85% !important; right: auto !important; bottom: auto !important; max-width: none; object-fit: fill; }
+.speed-copy { display: flex; flex-direction: column; align-items: center; gap: .104vw; text-transform: capitalize; line-height: 1.18; text-align: center; }
+.speed-copy span { font-size: clamp(6px, .625vw, 12px); }
+.speed-copy strong { font-size: clamp(12px, 1.25vw, 24px); }
+.speed-copy b { font-weight: 700; }
+.access-button {
+  width: 100%; margin-top: .05vw; padding: .315vw;
+  border: .6px solid #42b96b; border-radius: 999px;
+  color: white; font-size: clamp(7px, .76vw, 14.5px); font-weight: 700;
+  background: linear-gradient(90deg, rgba(17,139,64,.5), rgba(0,69,16,.5)), linear-gradient(180deg, #42b96b 22.7%, #055319 58%);
+  box-shadow: 0 2.4px 3px rgba(0,0,0,.5);
+  text-shadow: 0 2px 2px rgba(0,0,0,.7);
+}
+
+.benefits { position: absolute; z-index: 3; left: 11.61%; top: 75.28%; width: 59.9%; height: 19.17%; }
+.benefits-panel { position: absolute; inset: 0; background: url('/assets/desktop-panel.svg') center/100% 100% no-repeat; }
+.benefits-grid { position: absolute; left: 1.652%; top: 20.32%; display: grid; grid-template-columns: repeat(4, 24.17%); width: 96.7%; }
+.benefit-card { display: flex; align-items: center; gap: .48vw; color: var(--green); min-width: 0; }
+.benefit-icon { position: relative; flex: 0 0 3.94vw; width: 3.94vw; height: 3.85vw; overflow: hidden; border-radius: 50%; box-shadow: inset 0 3.7px 3.7px rgba(255,255,255,.97); }
+.benefit-icon img { object-fit: cover; }
+.benefit-copy { min-width: 0; text-transform: capitalize; }
+.benefit-copy h2 { margin: 0; font-size: clamp(9px, .962vw, 18.5px); line-height: 1.15; font-weight: 600; }
+.benefit-copy p { margin: .14vw 0 0; width: 8.3vw; font-size: clamp(6px, .674vw, 12.93px); line-height: 1.25; }
+
+.woman { position: absolute; z-index: 6; left: 68.8%; top: 12.87%; width: 33.07%; height: 88.15%; overflow: hidden; }
+.woman img { object-fit: cover; }
+.support { position: absolute; z-index: 8; left: 24.635%; bottom: 2.375%; width: 33.854%; height: 9.385%; }
+.support img { object-fit: fill; object-position: bottom; }
+
+@media (max-width: 767px) {
+  .landing-page { display: block; background: #f7ead2; }
+  .design-stage { width: 100%; aspect-ratio: 496 / 874; min-height: 100svh; }
+  .background-art img { left: .41% !important; width: 99.17% !important; object-fit: fill; }
+
+  .brand-lockup { left: 12.18%; top: 4.12%; width: 75.34%; height: 21.88%; }
+  .tpj-logo { left: 28.43%; top: 0; width: 43.13%; height: 47.84%; }
+  .headline { left: 9.06%; right: 9.06%; top: 53.48%; height: 49%; }
+
+  .speed-title { left: 30.97%; top: 26.95%; width: 38.05%; height: 4.85%; }
+  .speed-title span { left: 26.74%; top: 27.94%; transform: none; font-size: 2.946vw; }
+
+  .speed-panel { left: 16.13%; top: 33.52%; width: 67.74%; padding: 1.11vw 1.48vw; border-width: .48px; border-radius: 1.94vw; }
+  .speed-grid { grid-template-columns: repeat(6, 1fr); gap: 2.22vw; row-gap: 2.22vw; }
+  .speed-card { grid-column: span 2; padding: .97vw 3.2vw; border-width: .48px; border-radius: 2.91vw; }
+  .speed-card:nth-child(4) { grid-column: 2 / span 2; }
+  .speed-card:nth-child(5) { grid-column: 4 / span 2; }
+  .speed-copy { gap: .194vw; }
+  .speed-copy span { font-size: 1.165vw; }
+  .speed-copy strong { font-size: 2.33vw; }
+  .access-button { padding: .588vw; font-size: 1.412vw; }
+
+  .benefits { z-index: 7; left: 14.31%; top: 65.68%; width: 41.33%; height: 24.49%; }
+  .benefits-panel { display: none; }
+  .benefits-grid { position: static; display: grid; grid-template-columns: repeat(2, 1fr); gap: .69vw 1.21vw; width: 100%; height: 100%; }
+  .benefit-card { flex-direction: column; justify-content: flex-start; gap: .83vw; padding: 2.02vw 1.41vw; border: 2px solid var(--gold); border-radius: 2.91vw; background: var(--cream); box-shadow: inset 0 1.93px 1.93px rgba(255,255,255,.97), 0 .96px .48px rgba(0,0,0,.2); text-align: center; }
+  .benefit-icon { flex-basis: 6.83vw; width: 6.83vw; height: 6.66vw; }
+  .benefit-copy h2 { font-size: 2.45vw; line-height: 1.05; }
+  .benefit-copy p { margin-top: .25vw; width: 14.4vw; font-size: 1.166vw; line-height: 1.22; }
+
+  .woman { z-index: 6; left: auto; top: auto; right: 2.42%; bottom: 0; width: 40.73%; height: 48.05%; }
+  .woman img { width: 139.1% !important; height: 100.18% !important; left: -19.55% !important; top: -.09% !important; object-fit: fill; }
+  .support { z-index: 9; left: 5.04%; bottom: .72%; width: 81.05%; height: 7.17%; }
+  .support img { object-fit: fill; }
+}
+
+@media (min-width: 768px) and (max-aspect-ratio: 16/9) {
+  .design-stage { width: auto; height: 100svh; }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .brand-lockup, .speed-title, .speed-panel, .benefits, .woman, .support {
+    animation: reveal .65s ease-out both;
+  }
+  .speed-panel { animation-delay: .12s; }
+  .benefits { animation-delay: .2s; }
+  .woman { animation-delay: .28s; }
+  .support { animation-delay: .36s; }
+}
+
+@keyframes reveal {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
