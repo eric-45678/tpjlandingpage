@@ -91,7 +91,7 @@ export default function Home() {
           </div>
         </section>
 
-        <CroppedAsset className="woman" desktop="/assets/desktop-woman.png" mobile="/assets/mobile-woman.png" priority alt="Đại diện TPJ" />
+        <CroppedAsset className="woman" desktop="/assets/tpj-girl.png" mobile="/assets/tpj-girl.png" priority alt="Đại diện TPJ" />
         <CroppedAsset className="support" desktop="/assets/desktop-support.png" mobile="/assets/mobile-support.png" priority alt="Hỗ trợ 24/7 - Luôn đồng hành cùng bạn" />
       </section>
     </main>
