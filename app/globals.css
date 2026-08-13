@@ -113,7 +113,7 @@ a { color: inherit; text-decoration: none; }
 .benefit-copy p { margin: .14vw 0 0; width: 8.3vw; font-size: clamp(6px, .674vw, 12.93px); line-height: 1.25; }
 
 .woman { position: absolute; z-index: 6; left: 68.8%; top: 12.87%; width: 33.07%; height: 88.15%; overflow: hidden; }
-.woman img { object-fit: cover; }
+.woman img { object-fit: contain; object-position: bottom right; }
 .support { position: absolute; z-index: 8; left: 24.635%; bottom: 2.375%; width: 33.854%; height: 9.385%; }
 .support img { object-fit: fill; object-position: bottom; }
 

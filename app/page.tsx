@@ -1,4 +1,7 @@
+"use client";
+
 import Image from "next/image";
+import { useEffect, useState } from "react";
 
 const links = [1, 2, 3, 4, 5];
 
@@ -24,7 +27,7 @@ function CroppedAsset({ className, desktop, mobile, priority = false, alt = "" }
   );
 }
 
-function SpeedCard({ index }: { index: number }) {
+function SpeedCard({ index, latency }: { index: number; latency: number }) {
   return (
     <article className="speed-card" aria-label={`Đường dẫn truy cập ${index}`}>
       <div className="gauge" aria-hidden="true">
@@ -35,7 +38,7 @@ function SpeedCard({ index }: { index: number }) {
       </div>
       <div className="speed-copy">
         <span>Tốc độ hiện tại</span>
-        <strong>144 ms</strong>
+        <strong>{latency} ms</strong>
         <span>Link <b>{String(index).padStart(2, "0")}</b></span>
         <a className="access-button" href={`#link-${index}`} aria-label={`Truy cập đường dẫn ${index}`}>
           Truy cập ngay
@@ -60,6 +63,16 @@ function BenefitCard({ title, description, icon }: (typeof benefits)[number]) {
 }
 
 export default function Home() {
+  const [latencies, setLatencies] = useState(() => links.map(() => 144));
+
+  useEffect(() => {
+    const updateLatency = () => {
+      setLatencies(links.map(() => Math.floor(90 + Math.random() * 131)));
+    };
+    const interval = window.setInterval(updateLatency, 5000);
+    return () => window.clearInterval(interval);
+  }, []);
+
   return (
     <main className="landing-page">
       <section className="design-stage" aria-labelledby="main-heading">
@@ -80,7 +93,9 @@ export default function Home() {
 
         <div className="speed-panel">
           <div className="speed-grid">
-            {links.map((index) => <SpeedCard key={index} index={index} />)}
+            {links.map((index, position) => (
+              <SpeedCard key={index} index={index} latency={latencies[position]} />
+            ))}
           </div>
         </div>
 
