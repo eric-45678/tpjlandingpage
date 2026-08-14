@@ -87,7 +87,7 @@ export default function Home() {
       <section className="design-stage" aria-labelledby="main-heading">
         <h1 id="main-heading" className="sr-only">TPJ - Năng lượng mới, tương lai mới</h1>
 
-        <CroppedAsset className="background-art" desktop="/assets/desktop-overlay.png" mobile="/assets/mobile-bg.png" priority />
+        <CroppedAsset className="background-art" desktop="/assets/landing-background-airplane.jpg" mobile="/assets/landing-background-airplane.jpg" priority />
         <div className="warm-overlay" aria-hidden="true" />
 
         <header className="brand-lockup">
