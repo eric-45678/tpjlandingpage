@@ -27,6 +27,15 @@ function CroppedAsset({ className, desktop, mobile, priority = false, alt = "" }
   );
 }
 
+function LogoAsset({ alt = "TPJ" }: { alt?: string }) {
+  return (
+    <picture className="tpj-logo">
+      <source media="(max-width: 767px)" srcSet="/assets/mobile-tpj.png" />
+      <img src="/assets/desktop-tpj.png" alt={alt} />
+    </picture>
+  );
+}
+
 function SpeedCard({ index, latency }: { index: number; latency: number }) {
   return (
     <article className="speed-card" aria-label={`Đường dẫn truy cập ${index}`}>
@@ -82,7 +91,7 @@ export default function Home() {
         <div className="warm-overlay" aria-hidden="true" />
 
         <header className="brand-lockup">
-          <CroppedAsset className="tpj-logo" desktop="/assets/desktop-tpj.png" mobile="/assets/mobile-tpj.png" priority alt="TPJ" />
+          <LogoAsset />
           <CroppedAsset className="headline" desktop="/assets/desktop-headline.png" mobile="/assets/mobile-headline.png" priority alt="Năng lượng mới, tương lai mới - Đường truyền tốc độ cao" />
         </header>
 
