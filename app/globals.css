@@ -120,7 +120,7 @@ a { color: inherit; text-decoration: none; }
 @media (max-width: 767px) {
   .landing-page { height: auto; min-height: 100svh; display: block; background: #f7ead2; }
   .design-stage { width: 100%; height: auto; aspect-ratio: 496 / 874; min-height: 100svh; }
-  .background-art img { left: 0 !important; width: 100% !important; object-fit: cover; object-position: center; }
+  .background-art img { left: .41% !important; width: 99.17% !important; height: 100% !important; object-fit: fill; object-position: center; }
 
   .brand-lockup { left: 12.3%; top: 4.12%; width: 75.34%; height: 21.88%; }
   .tpj-logo { left: 50%; top: 0; width: 43.13%; height: 47.84%; align-items: center; transform: translateX(-50%); }
