@@ -30,8 +30,22 @@ function CroppedAsset({ className, desktop, mobile, priority = false, alt = "" }
 function LogoAsset({ alt = "TPJ" }: { alt?: string }) {
   return (
     <picture className="tpj-logo">
-      <source media="(max-width: 767px)" srcSet="/assets/mobile-tpj.png" />
+      <source media="(max-width: 767px)" srcSet="/assets/mobile-tpj-trimmed.png" />
       <img src="/assets/desktop-tpj.png" alt={alt} />
+    </picture>
+  );
+}
+
+function NativeAsset({ className, desktop, mobile, alt = "" }: {
+  className: string;
+  desktop: string;
+  mobile: string;
+  alt?: string;
+}) {
+  return (
+    <picture className={className}>
+      <source media="(max-width: 767px)" srcSet={mobile} />
+      <img src={desktop} alt={alt} />
     </picture>
   );
 }
@@ -92,7 +106,7 @@ export default function Home() {
 
         <header className="brand-lockup">
           <LogoAsset />
-          <CroppedAsset className="headline" desktop="/assets/desktop-headline.png" mobile="/assets/mobile-headline.png" priority alt="Năng lượng mới, tương lai mới - Đường truyền tốc độ cao" />
+          <NativeAsset className="headline" desktop="/assets/desktop-headline.png" mobile="/assets/mobile-headline-trimmed.png" alt="Năng lượng mới, tương lai mới - Đường truyền tốc độ cao" />
         </header>
 
         <div className="speed-title" aria-hidden="true">
@@ -116,7 +130,7 @@ export default function Home() {
         </section>
 
         <CroppedAsset className="woman" desktop="/assets/tpj-girl.png" mobile="/assets/tpj-girl.png" priority alt="Đại diện TPJ" />
-        <CroppedAsset className="support" desktop="/assets/desktop-support.png" mobile="/assets/mobile-support.png" priority alt="Hỗ trợ 24/7 - Luôn đồng hành cùng bạn" />
+        <NativeAsset className="support" desktop="/assets/desktop-support.png" mobile="/assets/mobile-support.png" alt="Hỗ trợ 24/7 - Luôn đồng hành cùng bạn" />
       </section>
     </main>
   );
