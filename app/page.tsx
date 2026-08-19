@@ -128,7 +128,7 @@ export default function Home() {
     const updateLatency = () => {
       setLatencies(links.map(() => Math.floor(90 + Math.random() * 131)));
     };
-    const interval = window.setInterval(updateLatency, 5000);
+    const interval = window.setInterval(updateLatency, 1000);
     return () => window.clearInterval(interval);
   }, []);
 
@@ -145,7 +145,7 @@ export default function Home() {
           <NativeAsset className="headline" desktop="/assets/headline-new.png" mobile="/assets/headline-new.png" alt="Năng lượng mới, tương lai mới - Đường truyền tốc độ cao" />
         </header>
 
-        <div className="speed-title" aria-hidden="true">
+        <div className="speed-title section-heading" aria-hidden="true">
           <CroppedAsset className="speed-title-art" desktop="/assets/desktop-speed-title.png" mobile="/assets/mobile-speed-title.png" />
           <span>Kiểm tra tốc độ</span>
         </div>
