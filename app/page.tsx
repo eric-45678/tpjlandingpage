@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 const links = [1, 2, 3, 4, 5];
 
@@ -50,6 +50,42 @@ function NativeAsset({ className, desktop, mobile, alt = "" }: {
   );
 }
 
+function AnimatedLatency({ value }: { value: number }) {
+  const [displayValue, setDisplayValue] = useState(value);
+  const displayValueRef = useRef(value);
+
+  useEffect(() => {
+    const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const startValue = displayValueRef.current;
+
+    if (reducedMotion || startValue === value) {
+      displayValueRef.current = value;
+      setDisplayValue(value);
+      return;
+    }
+
+    const duration = 720;
+    const startedAt = performance.now();
+    let animationFrame = 0;
+
+    const tick = (now: number) => {
+      const progress = Math.min((now - startedAt) / duration, 1);
+      // Ease out so a new reading settles naturally instead of jumping.
+      const easedProgress = 1 - Math.pow(1 - progress, 3);
+      const nextValue = Math.round(startValue + (value - startValue) * easedProgress);
+      displayValueRef.current = nextValue;
+      setDisplayValue(nextValue);
+
+      if (progress < 1) animationFrame = window.requestAnimationFrame(tick);
+    };
+
+    animationFrame = window.requestAnimationFrame(tick);
+    return () => window.cancelAnimationFrame(animationFrame);
+  }, [value]);
+
+  return <>{displayValue} ms</>;
+}
+
 function SpeedCard({ index, latency }: { index: number; latency: number }) {
   return (
     <article className="speed-card" aria-label={`Đường dẫn truy cập ${index}`}>
@@ -61,7 +97,7 @@ function SpeedCard({ index, latency }: { index: number; latency: number }) {
       </div>
       <div className="speed-copy">
         <span>Tốc độ hiện tại</span>
-        <strong>{latency} ms</strong>
+        <strong><AnimatedLatency value={latency} /></strong>
         <span>Link <b>{String(index).padStart(2, "0")}</b></span>
         <a className="access-button" href="https://tpj01.com/" target="_blank" rel="noreferrer" aria-label={`Truy cập đường dẫn ${index}`}>
           Truy cập ngay
