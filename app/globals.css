@@ -123,9 +123,9 @@ a { color: inherit; text-decoration: none; }
   .background-art img { left: .41% !important; width: 99.17% !important; height: 100% !important; object-fit: fill; object-position: center; }
 
   .brand-lockup { left: 12.3%; top: 4.12%; width: 75.34%; height: 21.88%; }
-  .tpj-logo { left: 50%; top: 0; width: 43.13%; height: 47.84%; align-items: center; transform: translateX(-50%); }
+  .tpj-logo { left: 50%; top: 0; width: 200px; height: auto; align-items: center; transform: translateX(-50%); }
   .tpj-logo img { width: 100%; height: auto; max-width: none; max-height: none; }
-  .headline { left: 9.06%; right: 9.06%; top: 50.9%; height: 49%; display: flex; align-items: flex-start; justify-content: center; overflow: visible; }
+  .headline { left: 9.06%; right: 9.06%; top: 50.9%; height: auto; display: flex; align-items: flex-start; justify-content: center; overflow: visible; }
   .headline img { position: static !important; width: 100% !important; height: auto !important; max-width: none; object-fit: contain; transform: none; }
 
   .speed-title { left: 30.97%; top: 26.95%; width: 38.05%; height: 4.85%; }
@@ -149,10 +149,10 @@ a { color: inherit; text-decoration: none; }
   .benefit-copy h2 { font-size: 2.45vw; line-height: 1.05; }
   .benefit-copy p { margin-top: .25vw; width: 14.4vw; font-size: 1.166vw; line-height: 1.22; }
 
-  .woman { z-index: 6; left: auto; top: auto; right: 2.42%; bottom: 0; width: 40.73%; height: 48.05%; }
+  .woman { z-index: 6; left: auto; top: auto; right: 12px; bottom: 0; width: 202px; height: 420px; }
   .woman img { width: 139.1% !important; height: 100.18% !important; left: -19.55% !important; top: -.09% !important; object-fit: fill; object-position: center; max-width: none; }
-  .support { z-index: 9; left: calc(50% - 1.815%); bottom: .72%; width: 81.05%; height: 7.17%; margin-left: -40.525%; }
-  .support img { width: 100%; height: 100%; object-fit: contain; }
+  .support { z-index: 9; left: calc(50% - 9px); bottom: 6.32px; width: 402px; height: 62.683px; margin-left: -201px; }
+  .support img { width: 100%; height: 100%; object-fit: fill; image-rendering: auto; }
 }
 
 @media (min-width: 768px) and (max-aspect-ratio: 16/9) {

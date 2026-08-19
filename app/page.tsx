@@ -130,7 +130,7 @@ export default function Home() {
         </section>
 
         <CroppedAsset className="woman" desktop="/assets/tpj-girl.png" mobile="/assets/tpj-girl.png" priority alt="Đại diện TPJ" />
-        <NativeAsset className="support" desktop="/assets/desktop-support.png" mobile="/assets/mobile-support.png" alt="Hỗ trợ 24/7 - Luôn đồng hành cùng bạn" />
+        <NativeAsset className="support" desktop="/assets/support-desktop-figma.png" mobile="/assets/support-mobile-figma.png" alt="Hỗ trợ 24/7 - Luôn đồng hành cùng bạn" />
       </section>
     </main>
   );
