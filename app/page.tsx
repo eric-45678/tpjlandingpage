@@ -165,6 +165,12 @@ export default function Home() {
           </div>
         </section>
 
+        <div className="mobile-logo-pedestal" aria-hidden="true">
+          <picture>
+            <img src="/assets/mobile-logo-pedestal.png" alt="" />
+          </picture>
+        </div>
+
         <CroppedAsset className="woman" desktop="/assets/tpj-girl.png" mobile="/assets/tpj-girl.png" priority alt="Đại diện TPJ" />
         <a className="support-link" href="https://s8cskh.com/" aria-label="Hỗ trợ 24/7">
           <NativeAsset className="support" desktop="/assets/support-desktop-trimmed.png" mobile="/assets/support-mobile.png" alt="Hỗ trợ 24/7 - Luôn đồng hành cùng bạn" />

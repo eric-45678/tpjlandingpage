@@ -111,6 +111,7 @@ a { color: inherit; text-decoration: none; }
 .benefit-copy { min-width: 0; text-transform: capitalize; }
 .benefit-copy h2 { margin: 0; font-size: clamp(9px, .962vw, 18.5px); line-height: 1.15; font-weight: 600; }
 .benefit-copy p { margin: .14vw 0 0; width: 8.3vw; font-size: clamp(6px, .674vw, 12.93px); line-height: 1.25; }
+.mobile-logo-pedestal { display: none; }
 
 .woman { position: absolute; z-index: 6; left: 68.8%; top: 12.87%; width: 33.07%; height: 88.15%; overflow: hidden; }
 .woman img { object-fit: contain; object-position: bottom right; }
@@ -151,6 +152,18 @@ a { color: inherit; text-decoration: none; }
   .benefit-icon { flex-basis: 6.83vw; width: 6.83vw; height: 6.66vw; }
   .benefit-copy h2 { font-size: 2.45vw; line-height: 1.05; }
   .benefit-copy p { margin-top: .25vw; width: 14.4vw; font-size: 1.166vw; line-height: 1.22; }
+
+  .mobile-logo-pedestal {
+    position: absolute;
+    z-index: 8;
+    display: block;
+    left: 32.0565%;
+    top: 58.238%;
+    width: 35.8871%;
+    aspect-ratio: 178 / 100;
+    pointer-events: none;
+  }
+  .mobile-logo-pedestal img { display: block; width: 100%; height: auto; }
 
   .woman { z-index: 6; left: auto; top: auto; right: min(12px, 2.4194vw); bottom: 0; width: min(202px, 40.7258vw); height: min(420px, 84.6774vw); }
   .woman img { width: 139.1% !important; height: 100.18% !important; left: -19.55% !important; top: -.09% !important; object-fit: fill; object-position: center; max-width: none; }
