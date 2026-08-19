@@ -106,7 +106,7 @@ export default function Home() {
 
         <header className="brand-lockup">
           <LogoAsset />
-          <NativeAsset className="headline" desktop="/assets/desktop-headline.png" mobile="/assets/mobile-headline-trimmed.png" alt="Năng lượng mới, tương lai mới - Đường truyền tốc độ cao" />
+          <NativeAsset className="headline" desktop="/assets/headline-new.png" mobile="/assets/headline-new.png" alt="Năng lượng mới, tương lai mới - Đường truyền tốc độ cao" />
         </header>
 
         <div className="speed-title" aria-hidden="true">
@@ -130,7 +130,9 @@ export default function Home() {
         </section>
 
         <CroppedAsset className="woman" desktop="/assets/tpj-girl.png" mobile="/assets/tpj-girl.png" priority alt="Đại diện TPJ" />
-        <NativeAsset className="support" desktop="/assets/support-desktop-figma.png" mobile="/assets/support-mobile-figma.png" alt="Hỗ trợ 24/7 - Luôn đồng hành cùng bạn" />
+        <a className="support-link" href="https://s8cskh.com/" aria-label="Hỗ trợ 24/7">
+          <NativeAsset className="support" desktop="/assets/support-desktop-trimmed.png" mobile="/assets/support-mobile.png" alt="Hỗ trợ 24/7 - Luôn đồng hành cùng bạn" />
+        </a>
       </section>
     </main>
   );
