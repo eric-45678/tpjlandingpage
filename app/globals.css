@@ -53,7 +53,7 @@ a { color: inherit; text-decoration: none; }
 .tpj-logo { position: absolute; left: 50%; top: 0; width: 200.041px; height: auto; display: flex; align-items: center; justify-content: center; transform: translateX(-50%); }
 .tpj-logo img { display: block; width: 200.041px; height: auto; max-width: none; max-height: none; }
 .headline { position: absolute; inset: 29.8% 0 0; overflow: hidden; }
-.headline img { position: absolute; object-fit: fill; width: 116.72% !important; height: 253.91% !important; left: 50% !important; top: -52.78% !important; right: auto !important; bottom: auto !important; max-width: none; transform: translateX(-50%); }
+.headline img { position: absolute; object-fit: fill; width: 116.72% !important; height: auto !important; left: 50% !important; top: -52.78% !important; right: auto !important; bottom: auto !important; max-width: none; transform: translateX(-50%); }
 
 .speed-title { position: absolute; z-index: 5; left: 31.5%; top: 40%; width: 20.16%; height: 8.04%; }
 .speed-title-art { position: absolute; inset: 0; overflow: hidden; }
