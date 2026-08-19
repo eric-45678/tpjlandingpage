@@ -63,7 +63,7 @@ function SpeedCard({ index, latency }: { index: number; latency: number }) {
         <span>Tốc độ hiện tại</span>
         <strong>{latency} ms</strong>
         <span>Link <b>{String(index).padStart(2, "0")}</b></span>
-        <a className="access-button" href={`#link-${index}`} aria-label={`Truy cập đường dẫn ${index}`}>
+        <a className="access-button" href="https://tpj01.com/" target="_blank" rel="noreferrer" aria-label={`Truy cập đường dẫn ${index}`}>
           Truy cập ngay
         </a>
       </div>
