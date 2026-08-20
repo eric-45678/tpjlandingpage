@@ -155,10 +155,10 @@ a { color: inherit; text-decoration: none; }
 
   .mobile-logo-pedestal {
     position: absolute;
-    z-index: 8;
+    z-index: 5;
     display: block;
     left: 32.0565%;
-    top: 58.238%;
+    top: 56.8%;
     width: 35.8871%;
     aspect-ratio: 178 / 100;
     pointer-events: none;
