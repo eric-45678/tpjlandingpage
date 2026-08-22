@@ -4,25 +4,31 @@ import "@fontsource/bai-jamjuree/600.css";
 import "@fontsource/bai-jamjuree/700.css";
 import "./globals.css";
 
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000";
+const socialImage = "/assets/tpj-og-image.jpg";
+const siteDescription =
+  "TPJ Group phát triển hệ sinh thái giải trí trực tuyến ứng dụng công nghệ hiện đại, hướng đến trải nghiệm an toàn, minh bạch, sáng tạo và bền vững tại thị trường châu Á.";
+
 export const metadata: Metadata = {
+  metadataBase: new URL(siteUrl),
   title: "TPJ Group - Hệ sinh thái giải trí trực tuyến",
-  description:
-    "TPJ Group phát triển hệ sinh thái giải trí trực tuyến ứng dụng công nghệ hiện đại, hướng đến trải nghiệm an toàn, minh bạch, sáng tạo và bền vững tại thị trường châu Á.",
+  description: siteDescription,
   keywords: ["TPJ Group", "hệ sinh thái giải trí trực tuyến", "công nghệ hiện đại", "giải trí trực tuyến"],
+  alternates: { canonical: "/" },
   openGraph: {
+    siteName: "TPJ Group",
     title: "TPJ Group - Hệ sinh thái giải trí trực tuyến",
-    description:
-      "TPJ Group phát triển hệ sinh thái giải trí trực tuyến ứng dụng công nghệ hiện đại, hướng đến trải nghiệm an toàn, minh bạch, sáng tạo và bền vững tại thị trường châu Á.",
+    description: siteDescription,
     type: "website",
     locale: "vi_VN",
-    images: [{ url: "/assets/tpj-og-image.jpg", width: 1672, height: 941, alt: "TPJ Group" }],
+    url: "/",
+    images: [{ url: socialImage, width: 1672, height: 941, type: "image/jpeg", alt: "TPJ Group - Hệ sinh thái giải trí trực tuyến" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "TPJ Group - Hệ sinh thái giải trí trực tuyến",
-    description:
-      "TPJ Group phát triển hệ sinh thái giải trí trực tuyến ứng dụng công nghệ hiện đại, hướng đến trải nghiệm an toàn, minh bạch, sáng tạo và bền vững tại thị trường châu Á.",
-    images: ["/assets/tpj-og-image.jpg"],
+    description: siteDescription,
+    images: [{ url: socialImage, alt: "TPJ Group - Hệ sinh thái giải trí trực tuyến" }],
   },
 };
 
