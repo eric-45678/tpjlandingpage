@@ -4,7 +4,7 @@ import "@fontsource/bai-jamjuree/600.css";
 import "@fontsource/bai-jamjuree/700.css";
 import "./globals.css";
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000";
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://tpj01.com";
 const socialImage = "/assets/tpj-og-image.jpg";
 const siteDescription =
   "TPJ Group phát triển hệ sinh thái giải trí trực tuyến ứng dụng công nghệ hiện đại, hướng đến trải nghiệm an toàn, minh bạch, sáng tạo và bền vững tại thị trường châu Á.";
