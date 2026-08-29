@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useEffect, useRef, useState, type MouseEvent } from "react";
+import { useEffect, useRef, useState } from "react";
 
 const links = [1, 2, 3, 4, 5];
 const destinationDomains = [
@@ -113,13 +113,9 @@ function latencyToNeedleRotation(value: number) {
   return NEEDLE_MIN_ROTATION + progress * (NEEDLE_MAX_ROTATION - NEEDLE_MIN_ROTATION);
 }
 
-function SpeedCard({ index, latency }: { index: number; latency: number }) {
+function SpeedCard({ index, latency, destination }: { index: number; latency: number; destination: string }) {
   const displayLatency = useAnimatedLatency(latency);
   const needleRotation = latencyToNeedleRotation(displayLatency);
-
-  const handleAccessClick = (event: MouseEvent<HTMLAnchorElement>) => {
-    event.currentTarget.href = getRandomDestinationUrl();
-  };
 
   return (
     <article className="speed-card" aria-label={`Đường dẫn truy cập ${index}`}>
@@ -138,7 +134,7 @@ function SpeedCard({ index, latency }: { index: number; latency: number }) {
         <span>Tốc Độ Hiện Tại</span>
         <strong>{displayLatency} Ms</strong>
         <span>Link <b>{String(index).padStart(2, "0")}</b></span>
-        <a className="access-button" href="https://tpj01.com/" target="_blank" rel="noreferrer" onClick={handleAccessClick} aria-label={`Truy cập đường dẫn ${index}`}>
+        <a className="access-button" href={destination} target="_blank" rel="noreferrer" aria-label={`Truy cập đường dẫn ${index}`}>
           Truy Cập Ngay
         </a>
       </div>
@@ -178,6 +174,11 @@ function BenefitCard({ title, description, icon }: (typeof benefits)[number]) {
 
 export default function Home() {
   const [latencies, setLatencies] = useState(() => links.map(() => 144));
+  const [destinations, setDestinations] = useState(() => links.map(() => "https://tpj01.com/"));
+
+  useEffect(() => {
+    setDestinations(links.map(() => getRandomDestinationUrl()));
+  }, []);
 
   useEffect(() => {
     const updateLatency = () => {
@@ -218,7 +219,7 @@ export default function Home() {
         <div className="speed-panel">
           <div className="speed-grid">
             {links.map((index, position) => (
-              <SpeedCard key={index} index={index} latency={latencies[position]} />
+              <SpeedCard key={index} index={index} latency={latencies[position]} destination={destinations[position]} />
             ))}
           </div>
         </div>
