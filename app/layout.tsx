@@ -1,22 +1,15 @@
 import type { Metadata, Viewport } from "next";
-import { headers } from "next/headers";
 import "@fontsource/bai-jamjuree/400.css";
 import "@fontsource/bai-jamjuree/600.css";
 import "@fontsource/bai-jamjuree/700.css";
 import "./globals.css";
 
 const socialImage = "/assets/tpj-og-image.jpg";
+const siteUrl = "https://tpj01.com";
 const siteDescription =
   "TPJ Group phát triển hệ sinh thái giải trí trực tuyến ứng dụng công nghệ hiện đại, hướng đến trải nghiệm an toàn, minh bạch, sáng tạo và bền vững tại thị trường châu Á.";
 
-export async function generateMetadata(): Promise<Metadata> {
-  const requestHeaders = await headers();
-  const host = requestHeaders.get("x-forwarded-host") ?? requestHeaders.get("host");
-  const protocol = requestHeaders.get("x-forwarded-proto")?.split(",")[0] ?? "https";
-  if (!host) throw new Error("Unable to determine deployment host for metadata");
-  const siteUrl = `${protocol}://${host}`;
-
-  return {
+export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: "TPJ Group - Hệ sinh thái giải trí trực tuyến",
   description: siteDescription,
@@ -37,8 +30,7 @@ export async function generateMetadata(): Promise<Metadata> {
     description: siteDescription,
     images: [{ url: socialImage, alt: "TPJ Group - Hệ sinh thái giải trí trực tuyến" }],
   },
-  };
-}
+};
 
 export const viewport: Viewport = {
   width: "device-width",
