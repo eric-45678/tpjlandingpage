@@ -1,9 +1,26 @@
 "use client";
 
 import Image from "next/image";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, type MouseEvent } from "react";
 
 const links = [1, 2, 3, 4, 5];
+const destinationDomains = [
+  "tpj01.com",
+  "tpj02.com",
+  "tpj03.com",
+  "tpj04.com",
+  "tpj05.com",
+  "tpj06.com",
+  "tpj07.com",
+  "tpj08.com",
+  "tpj09.com",
+  "tpj10.com",
+];
+
+function getRandomDestinationUrl() {
+  const domain = destinationDomains[Math.floor(Math.random() * destinationDomains.length)];
+  return `https://${domain}/`;
+}
 
 const benefits = [
   { title: "Hệ Sinh Thái Sạch", description: "Vì Một Tương Lai Xanh Bền Vững", icon: "/assets/benefit-ecosystem.png" },
@@ -100,6 +117,10 @@ function SpeedCard({ index, latency }: { index: number; latency: number }) {
   const displayLatency = useAnimatedLatency(latency);
   const needleRotation = latencyToNeedleRotation(displayLatency);
 
+  const handleAccessClick = (event: MouseEvent<HTMLAnchorElement>) => {
+    event.currentTarget.href = getRandomDestinationUrl();
+  };
+
   return (
     <article className="speed-card" aria-label={`Đường dẫn truy cập ${index}`}>
       <div className="gauge" aria-hidden="true">
@@ -117,7 +138,7 @@ function SpeedCard({ index, latency }: { index: number; latency: number }) {
         <span>Tốc Độ Hiện Tại</span>
         <strong>{displayLatency} Ms</strong>
         <span>Link <b>{String(index).padStart(2, "0")}</b></span>
-        <a className="access-button" href="https://tpj01.com/" target="_blank" rel="noreferrer" aria-label={`Truy cập đường dẫn ${index}`}>
+        <a className="access-button" href="https://tpj01.com/" target="_blank" rel="noreferrer" onClick={handleAccessClick} aria-label={`Truy cập đường dẫn ${index}`}>
           Truy Cập Ngay
         </a>
       </div>
