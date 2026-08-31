@@ -239,7 +239,7 @@ export default function Home() {
 
         <CroppedAsset className="woman" desktop="/assets/tpj-woman-v4-desktop.png" mobile="/assets/tpj-woman-v4-mobile.png" priority alt="Đại diện TPJ" />
         <a className="support-link" aria-label="Hỗ trợ 24/7">
-          <NativeAsset className="support" desktop="/assets/tpj-support-v4-desktop-cropped.png" mobile="/assets/tpj-support-v4-mobile-cropped.png" alt="Hỗ trợ 24/7 - admin@tpj.com" />
+          <NativeAsset className="support" desktop="/assets/support-24-7.png" mobile="/assets/support-24-7.png" alt="Hỗ trợ 24/7 - admin@tpj.com" />
         </a>
       </section>
     </main>
